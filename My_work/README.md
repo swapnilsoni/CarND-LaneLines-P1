@@ -33,10 +33,12 @@ Once all the above steps are done then I have used weighted_img helper function 
 
 ### 2. draw_lines()
 In order to draw a single line on the left and right lanes, I modified the draw_lines():
-#### 2.1) To find out the left and right lanes I have calculate the slope (m = (y2-y1)/ (x2-x1)). If m is less then 0 then it is left lane otherwise it is right lane.
-#### 2.2) to extraplot the both left and right lanes, I have used the np.polyfit function to calculate the new m (slope) and b(constant) of the given x and y.
-#### 2.3) Once calculate the new m and b. I got the min and max X points from both left and right lane
-#### 2.4) Then using the new X points, I have claculated the new Y values using poly1d.
+#### 2.1) I have calculate the slope (m = (y2-y1)/ (x2-x1)) to find out the left and right lanes. If m is less then 0 then lines belongs to left lane otherwise it belongs to right lane.
+#### 2.2) To extraplot the both left and right lines in the lanes, I have used the np.polyfit function. This function returns the new m (slope) and b(constant) of the given all Xs and Ys points. Before doing this I had to seperate out all X and Y in a separate list.
+#### 2.3) Then, I used the min and max function to calculate the min and max data point of X points for both lanes.
+#### 2.4) By doing above step 4, I will get 4 X points 2 foreach lanes. Then using these value calculated the new Y values using poly1d.
+
+
 ![alt text][image3]
 
 
